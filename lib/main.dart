@@ -60,6 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
               )
             ),
             Text(
