@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+
       theme: ThemeData(
         primarySwatch: Colors.blue,
 
@@ -44,9 +45,19 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
+
         title: Text(widget.title),
         centerTitle: true,
         backgroundColor: Colors.amber,
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.add_circle_outline),
+            onPressed: (){
+
+            },
+          )
+        ],
+
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -67,6 +78,17 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            Image.asset('assets/handicon.png'),
+            RaisedButton.icon(
+              onPressed: () {
+                print('flat button clicked');
+              },
+              icon: Icon(
+                Icons.mail
+              ),
+              label: Text('click me'),
+              color: Colors.lightBlue,
+            )
           ],
         ),
       ),
