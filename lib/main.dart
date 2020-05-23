@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
 
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'My First App'),
+      home: MyHomePage(title: 'Billion Dollar App'),
     );
   }
 }
@@ -52,42 +52,59 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.add_circle_outline),
-            onPressed: (){
-
-            },
+            onPressed: (){},
           )
         ],
-
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
-
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times: \n',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic,
-              )
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            Image.asset('assets/handicon.png'),
-            RaisedButton.icon(
-              onPressed: () {
-                print('flat button clicked');
-              },
-              icon: Icon(
-                Icons.mail
+            Expanded(
+              flex: 1,
+              child: Text(
+                'You have pushed the button this many times: \n',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.italic,
+                )
               ),
-              label: Text('click me'),
-              color: Colors.lightBlue,
+            ),
+            Expanded(
+              flex: 1,
+              child: Text(
+                '$_counter',
+                style: Theme.of(context).textTheme.headline4,
+              ),
+            ),
+            Expanded(
+              flex:1,
+                child: Image.asset('assets/handicon.png')),
+            Expanded(
+              flex: 1,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children:<Widget>[
+                  RaisedButton.icon(
+                    onPressed: () {
+                      print('flat button clicked');
+                    },
+                    icon: Icon(
+                        Icons.mail
+                    ),
+                    label: Text('click me'),
+                    color: Colors.lightBlue,
+                  ),
+                  Text(
+                    "Hello world",
+                  )
+                ]
+              ),
             )
           ],
         ),
