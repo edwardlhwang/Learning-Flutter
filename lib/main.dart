@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'item_card.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,6 +33,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  List<String> data = [
+    'hello world',
+    'i am coder'
+  ];
 
   void _incrementCounter() {
     setState(() {
@@ -66,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Expanded(
               flex: 1,
               child: Text(
-                'You have pushed the button this many times: \n',
+                'You have pushed the button this many times: ',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -81,9 +86,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: Theme.of(context).textTheme.headline4,
               ),
             ),
-            Expanded(
-              flex:1,
-                child: Image.asset('assets/handicon.png')),
+//            Expanded(
+//              flex:1,
+//                child: Image.asset('assets/handicon.png')),
             Expanded(
               flex: 1,
               child: Row(
@@ -105,6 +110,19 @@ class _MyHomePageState extends State<MyHomePage> {
                   )
                 ]
               ),
+            ),
+            Expanded(
+              flex: 10,
+              child: Column(
+                children: data.map((s) => DataCard(
+                  data: s,
+                  delete: () {
+                    setState(() {
+                    data.remove(String);
+                  });
+                  })
+                ).toList(),
+              )
             )
           ],
         ),
